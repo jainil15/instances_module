@@ -1,5 +1,5 @@
 resource "tls_private_key" "rsa_key" {
-  algorithm = "rsa"
+  algorithm = "RSA"
 }
 
 # Public key loaded from a terraform-generated private key, using the PEM (RFC 1421) format
