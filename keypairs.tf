@@ -11,5 +11,5 @@ data "tls_public_key" "this" {
 # Creating key pair for ssh access
 resource "aws_key_pair" "mykeypair" {
   key_name   = "${var.env}-mykeypair"
-  public_key = data.tls_public_key.this
+  public_key = data.tls_public_key.this.public_key_openssh
 }

@@ -10,15 +10,7 @@ resource "aws_instance" "public" {
   tags = {
     Name = "${var.env}-public-${count.index}"
   }
-  user_data = <<EOF
-#!bin/bash
-yum update -y
-yum install -y httpd
-systemctl start httpd
-systemctl enable httpd
-echo "<h1>HELLO WORLD FROM $(hostname -f)</h1>" > /var/www/html/index.html
-systemctl restart httpd
-  EOF
+  user_data = var.user_data
 }
 
 # Creating private aws ec2 instance

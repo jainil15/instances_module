@@ -84,7 +84,13 @@ variable "private_sg_egress_with_cidr_blocks" {
 }
 
 variable "private_key" {
-  type = string
+  type        = string
   description = "Private key value for generating public key"
+  sensitive   = true
+}
+
+variable "user_data" {
+  type        = string
+  description = "Enter the user data to run while lauching the ec2 instance"
 }
 
