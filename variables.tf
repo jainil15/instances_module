@@ -81,6 +81,10 @@ variable "private_sg_egress_with_cidr_blocks" {
   }))
   default     = []
   description = "Full ingress blocks with cidr blocks, to_port, from_port, protocol, ipv6_cidr_blocks(optional)"
+}
 
+variable "private_key" {
+  type = string
+  description = "Private key value for generating public key"
 }
 
