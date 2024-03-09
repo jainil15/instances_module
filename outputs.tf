@@ -17,3 +17,8 @@ output "private_instance_id" {
   value = aws_instance.private[*].id  
   description = "Private ec2 instance id"
 }
+
+output "public_instance_public_ipv4" {
+  value = aws_instance.public[*].public_ip  
+  description = "Private ec2 instance id"
+}
